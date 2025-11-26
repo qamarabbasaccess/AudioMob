@@ -14,7 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import LinearGradient from 'react-native-linear-gradient';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 import {useNavigation} from '@react-navigation/native';
 
 //custom imports
@@ -157,16 +157,23 @@ function StoryView({route}) {
       <CKeyBoardAvoidWrapper contentContainerStyle={styles.flexGrow1}>
         <View style={localStyles.backgroundContainer}>
           {content[current].type == 'video' ? (
-            <Video
+            // <Video
+            //   source={{
+            //     uri: content[current].content,
+            //   }}
+            //   rate={1.0}
+            //   volume={1.0}
+            //   resizeMode="cover"
+            //   onReadyForDisplay={play()}
+            //   onLoad={onLoadVideo}
+            //   style={{height: height, width: width}}
+            // />
+             <Image
+              onLoadEnd={onLoadEndImage}
               source={{
                 uri: content[current].content,
               }}
-              rate={1.0}
-              volume={1.0}
-              resizeMode="cover"
-              onReadyForDisplay={play()}
-              onLoad={onLoadVideo}
-              style={{height: height, width: width}}
+              style={{width: width, height: height, resizeMode: 'cover'}}
             />
           ) : (
             <Image

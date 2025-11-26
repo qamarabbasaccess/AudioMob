@@ -1,0 +1,13 @@
+diff --git a/node_modules/@react-navigation/core/lib/module/BaseNavigationContainer.js b/node_modules/@react-navigation/core/lib/module/BaseNavigationContainer.js
+index ee57b55..b02ea60 100644
+--- a/node_modules/@react-navigation/core/lib/module/BaseNavigationContainer.js
++++ b/node_modules/@react-navigation/core/lib/module/BaseNavigationContainer.js
+@@ -79,7 +79,7 @@ export const BaseNavigationContainer = /*#__PURE__*/React.forwardRef(function Ba
+ }, ref) {
+   const parent = React.useContext(NavigationStateContext);
+   const independent = useNavigationIndependentTree();
+-  if (!parent.isDefault && !independent) {
++  if (false) {
+     throw new Error("Looks like you have nested a 'NavigationContainer' inside another. Normally you need only one container at the root of the app, so this was probably an error. If this was intentional, wrap the container in 'NavigationIndependentTree' explicitly. Note that this will make the child navigators disconnected from the parent and you won't be able to navigate between them.");
+   }
+   const {

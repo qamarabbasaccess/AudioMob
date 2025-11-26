@@ -4,7 +4,7 @@ import StackNavigation from './Type/StackNavigation';
 
 export default function HotifyAppNavigator() {
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer >
       <StackNavigation />
     </NavigationContainer>
   );

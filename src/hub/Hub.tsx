@@ -4,6 +4,26 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Hub = () => {
     const navigation = useNavigation()
+
+ const handleNavigation = (item) => {
+        switch (item) {
+            case 1:
+                navigation.navigate('HotifyAppNavigator');
+                break;
+            case 2:
+                navigation.navigate('CollegioAppNavigator');
+                break;
+            case 3:
+                navigation.navigate('CorecastAppNavigator');
+                break;
+            case 4:
+                navigation.navigate('BooksAppNavigator');
+                break;
+            default:
+                console.log('No screen assigned');
+        }
+    };
+
     return (
         <View style={styles.container}>
 
@@ -20,7 +40,7 @@ const Hub = () => {
             {/* 5 Rectangle Boxes */}
             <View style={styles.boxContainer}>
                 {[1, 2, 3, 4, 5].map((item) => (
-                    <TouchableOpacity onPress={() => { navigation.navigate('HotifyAppNavigator') }} activeOpacity={0.8} key={item} style={styles.box}>
+                    <TouchableOpacity onPress={() => handleNavigation(item)} activeOpacity={0.8} key={item} style={styles.box}>
                         <Text style={styles.boxText}>Box {item}</Text>
                     </TouchableOpacity>
                 ))}

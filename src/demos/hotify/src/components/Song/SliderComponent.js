@@ -3,7 +3,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import {useSelector} from 'react-redux';
 import Slider from '@react-native-community/slider';
 import {useNavigation} from '@react-navigation/native';
-import Sound from 'react-native-sound';
+// import Sound from 'react-native-sound';
 import {useFocusEffect} from '@react-navigation/native';
 
 // local imports
@@ -37,7 +37,7 @@ const SliderComponent = props => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    loadSound();
+    // loadSound();
     return () => {
       if (sound) {
         sound.release();
@@ -83,22 +83,22 @@ const SliderComponent = props => {
     }
   }, [sliderPosition]);
 
-  const loadSound = useCallback(() => {
-    const newSound = new Sound(
-      'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3',
-      null,
-      error => {
-        if (error) {
-          console.log('Failed to load sound', error);
-          return;
-        }
-        setSound(newSound);
-        setTotalDuration(formatTime(newSound.getDuration()));
-        setSliderTotalLength(newSound.getDuration());
-      },
-    );
-    setSound(newSound);
-  }, [currentIndex]);
+  // const loadSound = useCallback(() => {
+  //   const newSound = new Sound(
+  //     'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3',
+  //     null,
+  //     error => {
+  //       if (error) {
+  //         console.log('Failed to load sound', error);
+  //         return;
+  //       }
+  //       setSound(newSound);
+  //       setTotalDuration(formatTime(newSound.getDuration()));
+  //       setSliderTotalLength(newSound.getDuration());
+  //     },
+  //   );
+  //   setSound(newSound);
+  // }, [currentIndex]);
 
   const onSliderValueChange = value => {
     if (sound) {
