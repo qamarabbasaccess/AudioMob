@@ -7,12 +7,14 @@ import Hub from './src/hub/Hub';
 import RNRoot from './src/demos/hotify/index';
 import CollegioRoot from './src/demos/collegio/index';
 import CorecastAppNavigator from './src/demos/corecast/src/navigation/index'
+import BooksRoot from './src/demos/books/src/App'
 
 export type RootStackParamList = {
   Hub: undefined;
   HotifyAppNavigator: undefined;
   CollegioAppNavigator : undefined;
   CorecastAppNavigator : undefined;
+  BooksAppNavigator: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -28,6 +30,7 @@ const App = () => {
         <Stack.Screen name="HotifyAppNavigator" component={RNRoot} />
         <Stack.Screen name="CollegioAppNavigator" component={CollegioRoot} />
         {/* <Stack.Screen name="CorecastAppNavigator" component={CorecastAppNavigator} /> */}
+        {/* <Stack.Screen name="BooksAppNavigator" component={BooksRoot} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
